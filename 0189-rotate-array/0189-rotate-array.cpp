@@ -4,16 +4,10 @@ public:
         int n = nums.size();
         k = k % n;
 
-        int arr[n];
-        for(int i = 0 ; i < k ; i++){
-            arr[i] = nums[n-k+i];
-        }
-        for(int i = k ; i<n ;i++ ){
-            arr[i] = nums[i-k];
-        }
+        reverse(nums.begin(), nums.end());
 
-        for(int i = 0 ; i <n ; i++){
-            nums[i] = arr[i];
-        }
+        reverse(nums.begin(), nums.begin() + k);
+
+        reverse(nums.begin() + k  , nums.end());
     }
 };
